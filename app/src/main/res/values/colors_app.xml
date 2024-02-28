@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="outLineText_background">#3EA7A7A7</color>
+    <color name="background_color">#B44004D3</color>
+    <color name="register_button_color">#B46122FB</color>
+</resources>
