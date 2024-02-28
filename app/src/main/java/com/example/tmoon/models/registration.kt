@@ -1,5 +1,6 @@
 package com.example.tmoon.models
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,8 +11,8 @@ import retrofit2.Response
 import com.example.tmoon.objects.RetrofitClient
 
 class RegistrationViewModel : ViewModel() {
-
-    fun register(first_name: String,last_name: String, email: String,phone:String,
+    @SuppressLint("SuspiciousIndentation")
+    fun register(first_name: String, last_name: String, email: String, phone:String,
                  login: String, password: String) {
         viewModelScope.launch {
             try{
@@ -19,20 +20,24 @@ class RegistrationViewModel : ViewModel() {
                     RegistrationRequest(first_name,last_name, email, phone, login, password)
                 )
                 if (response.isSuccessful && response.body() != null) {
-                Log.d("Log", response.message())
+                    Log.d("Log", "success message" + response.message())
+                    Log.d("Log", "success code " + response.code().toString())
                 val responseBody = response.body()!!
-                    Log.d("Log", responseBody.message)
+                    Log.d("Log", "success respBody.message" + responseBody.message)
                     println(responseBody.message)
+
             } else {
-                Log.d("Log", response.errorBody().toString())
-                    Log.d("Log", response.message().toString())
-                    Log.d("Log", "Code = " + response.code().toString())
+
+                    Log.d("Log", "Error: responseBody.errorBody " + response.errorBody().toString())
+                    Log.d("Log", "Error: responce.message " + response.message().toString())
+                    Log.d("Log", "Error Code = " + response.code().toString())
 
             }
             } catch (e: Exception) {
-                Log.d("Log", "exception " + e.message.toString())
+                Log.d("Log", "exception e.message  " + e.message.toString())
                 return@launch
             }
         }
     }
+
 }

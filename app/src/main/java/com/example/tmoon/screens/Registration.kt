@@ -31,8 +31,13 @@ import com.example.tmoon.R
 import com.example.tmoon.models.RegistrationViewModel
 import com.example.tmoon.navigation.NavRoutes
 
+
+
+
 @Composable
-fun Registration(registrationViewModel: RegistrationViewModel = viewModel(), navController: NavHostController) {
+fun Registration(registrationViewModel: RegistrationViewModel = viewModel(),
+                 navController: NavHostController) {
+    //===Доделать val regState by registrationViewModel.regState.observeAsState()
     val first_name = remember {
         mutableStateOf("")
     }
