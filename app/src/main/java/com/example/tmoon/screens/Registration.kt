@@ -1,5 +1,6 @@
 package com.example.tmoon.screens
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -14,6 +15,8 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -22,22 +25,26 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.tmoon.R
 import com.example.tmoon.models.RegistrationViewModel
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.platform.LocalContext
 import com.example.tmoon.navigation.NavRoutes
-
-
+import kotlinx.coroutines.delay
 
 
 @Composable
 fun Registration(registrationViewModel: RegistrationViewModel = viewModel(),
                  navController: NavHostController) {
-    //===Доделать val regState by registrationViewModel.regState.observeAsState()
+    val regState by registrationViewModel.regState.observeAsState()
+    val context = LocalContext.current
+    val isButtonClicked = remember {
+        mutableStateOf(false)
+    }
     val first_name = remember {
         mutableStateOf("")
     }
@@ -140,17 +147,40 @@ fun Registration(registrationViewModel: RegistrationViewModel = viewModel(),
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {
-            registrationViewModel.register(
-                first_name.value, last_name.value, email.value,
-                phone.value, login.value, password.value
-            )
-        }, colors = ButtonDefaults.buttonColors(containerColor =
-        colorResource(id = R.color.background_color)
-        ),
-            border = BorderStroke(2.dp, colorResource(id = R.color.register_button_color))
+            isButtonClicked.value = true
+
+        }, colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent)
+
         ) {
-            Text("Регистрация", fontSize = 20.sp)
+            Text("Регистрация", fontSize = 20.sp, color = Color.White)
+        }
+
+    }
+    if(isButtonClicked.value) {
+        registrationViewModel.register(
+            first_name.value, last_name.value, email.value,
+            phone.value, login.value, password.value
+        )
+        when (regState) {
+            1 -> {
+                Toast.makeText(context, "Регистрация прошла успешно!", Toast.LENGTH_SHORT).show()
+                navController.navigate(NavRoutes.Login.route)
+                isButtonClicked.value = false
+            }
+            2 -> {
+                Toast.makeText(
+                    context, "Пользователь с такими данными уже существует",
+                    Toast.LENGTH_SHORT
+                ).show()
+                isButtonClicked.value = false
+            }
+            3 -> {
+                Toast.makeText(
+                    context, "Ошибка на стороне сервера",
+                    Toast.LENGTH_SHORT
+                ).show()
+                isButtonClicked.value = false
+            }
         }
     }
-
 }

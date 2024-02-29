@@ -1,20 +1,20 @@
-#Wed Feb 28 00:39:41 IRKT 2024
-base.0=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.3=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
-base.4=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
-base.5=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
-base.6=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
-base.7=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
-base.8=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex
-base.9=/home/rza/StudioProjects/MoonApp/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+#Thu Feb 29 09:40:29 IRKT 2024
+base.0=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.5=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.6=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+base.7=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.8=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.9=C\:\\Users\\polubentcev.ma\\AndroidStudioProjects\\zaloopa\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
-path.2=1/classes.dex
-path.3=10/classes.dex
-path.4=13/classes.dex
-path.5=14/classes.dex
+path.2=10/classes.dex
+path.3=13/classes.dex
+path.4=14/classes.dex
+path.5=1/classes.dex
 path.6=6/classes.dex
 path.7=8/classes.dex
 path.8=9/classes.dex
